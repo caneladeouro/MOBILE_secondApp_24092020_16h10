@@ -1,6 +1,13 @@
 <ion-app>
   <ion-router-outlet></ion-router-outlet>
 
+  <ion-header>
+    <ion-toolbar>
+      <ion-title> Blank </ion-title>
+      <ion-menu-button slot="start" color="primary"></ion-menu-button>
+    </ion-toolbar>
+  </ion-header>
+
   <ion-menu side="start" menuId="first" contentId="main">
     <ion-header>
       <ion-toolbar color="primary">
@@ -8,12 +15,25 @@
       </ion-toolbar>
     </ion-header>
     <ion-content>
-      <ion-list>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
+      <ion-list (click)="toggleMenu()">
+        <ion-item routerLink="/home">
+          <ion-icon name="home-outline" slot="start"></ion-icon>
+          <ion-title> Home </ion-title>
+        </ion-item>
+
+        <ion-item routerLink="/about-sister">
+          <ion-icon
+            name="about-sister"
+            src="assets/icon/information.svg"
+            slot="start"
+          ></ion-icon>
+          <ion-title> About Sister </ion-title>
+        </ion-item>
+
+        <ion-item routerLink="/credits">
+          <ion-icon name="credits" src="" slot="start"></ion-icon>
+          <ion-title> Credits </ion-title>
+        </ion-item>
       </ion-list>
     </ion-content>
   </ion-menu>
